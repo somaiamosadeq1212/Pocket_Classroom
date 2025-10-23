@@ -1,0 +1,698 @@
+/* چیدمان کلی کارت‌ها */
+#libraryList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 0;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+/* 📦 coumns (mobile-first) */
+#libraryList > div {
+  flex: 1 1 100%;
+  max-width: 100%;
+  display: flex;
+}
+
+/* deesign of carts */
+#libraryList .card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(145deg, #142833, #1b3b47, #234b58) !important;
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  height: auto;
+  min-height: 240px;
+  position: relative;
+  overflow: hidden;
+}
+
+#libraryList .card:hover {
+   transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 18px rgba(0, 255, 179, 0.15);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Light effect on hover */
+#libraryList .card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(255,255,255,0.05), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+#libraryList .card:hover::before {
+  opacity: 1;
+}
+
+/* tite */
+#libraryList .card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 1.25rem;
+}
+
+/* سط Badge */
+#libraryList .badge {
+  font-size: 0.75rem;
+  padding: 0.35em 0.6em;
+  border-radius: 0.5rem;
+  background-color: #0d6efd;
+}
+
+/* description */
+#libraryList p.text-secondary {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #dddbdb;
+  margin-bottom: 1rem;
+}
+
+/* progress bar */
+#libraryList .progress {
+  height: 8px;
+  border-radius: 6px;
+  background-color: #afabab;
+  overflow: hidden;
+  margin-bottom: 1.45rem;
+}
+#libraryList .progress-bar {
+  border-radius: 6px;
+  transition: width 0.4s ease;
+}
+
+/* Stats below the progress bar */
+#libraryList .small {
+  font-size: 0.8rem;
+  color: #d6d4d4;
+}
+
+/* Buttons */
+#libraryList .btn {
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 0.75rem;
+  padding: 0.45rem 0.75rem;
+  transition: all 0.25s ease;
+  border: none;
+  margin-top: 1.25rem;
+}
+
+#libraryList .btn-primary {
+  background: linear-gradient(135deg, #007bff, #00c2ff);
+  color: #fff;
+}
+#libraryList .btn-secondary {
+  background: linear-gradient(135deg, #7d8a96, #4a4a4a);
+  color: #fff;
+}
+
+#libraryList .btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* Spacing between buttons */
+#libraryList .d-flex.flex-wrap.gap-2 {
+  gap: 0.5rem;
+}
+
+/*  mobile */
+@media (max-width: 767px) {
+  #libraryList {
+    padding: 0 0.75rem;
+  }
+
+  #libraryList > div {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  #libraryList .card {
+    padding: 1.25rem;
+    min-height: 220px;
+    border-radius: 1rem;
+    background: linear-gradient(145deg, #1b1b1b, #262626);
+  }
+
+  #libraryList .card-title {
+    font-size: 1rem;
+  }
+
+  #libraryList p,
+  #libraryList span,
+  #libraryList button {
+    font-size: 0.85rem;
+  }
+
+  #libraryList .progress {
+    height: 5px;
+  }
+}
+
+/*  Desktop  */
+@media (min-width: 768px) {
+  #libraryList > div {
+    flex: 1 1 calc(50% - 1.5rem);
+    max-width: calc(50% - 1.5rem);
+  }
+}
+@media (min-width: 992px) {
+  #libraryList > div {
+    flex: 1 1 calc(33.333% - 1.5rem);
+    max-width: calc(33.333% - 1.5rem);
+  }
+}
+
+#libraryList .btn,
+#libraryList button {
+  cursor: pointer !important;
+  z-index: 5;
+  position: relative;
+  pointer-events: auto !important;
+}
+
+/* Proper spacing for title, paragraph, and buttons on mobile */
+@media (max-width: 767px) {
+  #library h2,
+  #library p,
+  #library .d-flex.justify-content-between {
+    padding: 0 0.75rem !important;
+  }
+
+  #library h2 {
+    font-size: 1.2rem !important;
+  }
+
+  #library p {
+    font-size: 0.9rem !important;
+    line-height: 1.5;
+  }
+
+  #library .btn {
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Proper grid setup for Library: 3-2-1 cards layout */
+#library.section.active-section {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+}
+
+#library > .col-lg-4,
+#library > .col-md-6,
+#library > .col-12 {
+  display: flex;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+/* Ensure correct size for each card */
+@media (min-width: 992px) {
+  #library > .col-lg-4 { flex: 0 0 33.3333%; max-width: 33.3333%; }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  #library > .col-md-6 { flex: 0 0 50%; max-width: 50%; }
+}
+
+@media (max-width: 767.98px) {
+  #library > .col-12 { flex: 0 0 100%; max-width: 100%; }
+}
+
+/*  Carts of Author section */
+#author .card {
+  background: rgba(20, 40, 50, 0.35) !important; 
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35) !important;
+  backdrop-filter: blur(10px) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(10px) saturate(140%) !important;
+  color: #e9f1f5 !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+#author .card:hover {
+  transform: translateY(-6px);
+  background: rgba(30, 60, 70, 0.45) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45) !important;
+}
+
+/* Cart title */
+#author .card-title {
+  color: #ffffff !important;
+}
+
+/* Inputs and text areas */
+#author input,
+#author textarea,
+#author select {
+  background: rgba(40, 60, 70, 0.35) !important;
+  color: #fff !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 0.75rem !important;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+#author input:focus,
+#author textarea:focus,
+#author select:focus {
+  border-color: #00ffcc !important;
+  background: rgba(40, 80, 90, 0.45) !important;
+  outline: none !important;
+}
+
+/* Background for Flashcards and Quiz items in Author */
+#author #flashcarsdContainer .flashcard-row,
+#author #quizContainer .quiz-card {
+  background: linear-gradient(135deg, #1a2b32, #223d4a, #2c5364);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+#author #flashcardsContainer .flashcard-row:hover,
+#author #quizContainer .quiz-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.4);
+}
+
+#author .form-control::placeholder {
+  color: rgba(199, 196, 196, 0.5);
+}
+
+#author .form-control:focus,
+#author .form-select:focus {
+  border-color: #00c2ff !important;
+  box-shadow: 0 0 0 0.2rem rgba(0, 194, 255, 0.25);
+}
+
+/* Adjust height and spacing of Flashcard cards on mobile */
+@media (max-width: 768px) {
+  #flashcardContainer .card {
+    min-height: auto !important;
+    height: auto !important;
+    padding: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+/* Spacing between cards and their inner content */
+  #flashcardsContainer {
+    gap: 0.75rem !important;
+  }
+
+  /* Keep text centered inside cards */
+  #flashcardsContainer .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.flashcard-row:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.4);
+}
+
+.flashcard-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #1b2a30, #233b44, #2c5364);
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin-bottom: 12px;
+  flex-wrap: wrap; /* برای موبایل */
+}
+
+.flashcard-row input {
+  flex: 1 1 40%;
+  min-width: 140px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.flashcard-row input::placeholder {
+  color: #bbb;
+}
+
+.flashcard-row .removeCard {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.flashcard-row .removeCard:hover {
+  background: #c0392b;
+}
+
+/* For small screen sizes */
+@media (max-width: 768px) {
+  .flashcard-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .flashcard-row .removeCard {
+    width: 100%;
+  }
+}
+
+/* --- Tabs of learn --- */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+
+}
+
+.tab {
+  padding: 10px;
+  color: #c9d1d9;
+  cursor: pointer;
+}
+
+/* --- Tab Content --- */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+#capsuleSelect{
+  background-color: #41794c;
+  color: #e9f1f5;
+  width: 150px;
+  max-height: 40px;
+}
+
+/* --- Quiz --- */
+/* .quiz-box {
+  text-align: center;
+  background-color: #161b22;
+  border-radius: 10px;
+  padding: 20px;
+} */
+
+#learn .note-box,
+#learn .flashcard,
+#learn .quiz-box {
+  background: linear-gradient(135deg, #1a2b32, #223d4a, #2c5364);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+#learn .note-box:hover,
+#learn .flashcard:hover,
+#learn .quiz-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+
+#learn .tab-content {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+#learn .tab-content.active {
+  display: block;
+}
+
+#learn .tab-content.fade-in {
+  opacity: 1;
+}
+
+
+/* --- Flashcards Layout --- */
+.flashcard-wrapper {
+  border-radius: 16px;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 255, 150, 0.1);
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.flashcard-wrapper:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.4);
+}
+
+.flashcard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #aaa;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.flashcard-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.flashcard-box {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  width: 80%;
+  min-height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: transform 0.5s ease, background 0.5s;
+  cursor: pointer;
+}
+
+.flashcard-box.flipped {
+  transform: rotateY(180deg);
+  background: #21262d;
+}
+
+.nav-btn {
+  background: transparent;
+  border: none;
+  color: #999;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.nav-btn:hover {
+  color: #00ff99;
+}
+
+.flashcard-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.flashcard-actions button {
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-known {
+  background: #238636;
+  color: white;
+}
+
+.btn-unknown {
+  background: #30363d;
+  color: #ffcc00;
+}
+.btn-unknown:hover {
+  background: #444;
+}
+.btn-known:hover {
+  background: #2ea043;
+}
+
+.quiz-card {
+  background: rgba(20, 40, 50, 0.35) !important; 
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+   backdrop-filter: blur(10px) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(10px) saturate(140%) !important;
+  color: #e9f1f5 !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.quiz-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.5);
+}
+
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  color: #555;
+  font-weight: bold;
+}
+
+.quiz-question {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+/* Options */
+.quiz-choices {
+  list-style: none;
+  padding: 0;
+}
+
+.quiz-choices li {
+  margin-bottom: 10px;
+}
+
+.choice-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background: linear-gradient(135deg, #1a2b32, #223d4a, #2c5364);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.choice-btn:hover {
+  background: rgba(30, 60, 70, 0.45) !important;
+  box-shadow: 0 0 0 0.2rem rgba(0, 194, 255, 0.25);
+  transform: translateY(-3px);
+}
+
+.choice-btn.correct {
+  background: #d4edda;
+  border-color: #28a745;
+}
+
+.choice-btn.wrong {
+  background: #f8d7da;
+  border-color: #dc3545;
+}
+
+.quiz-footer {
+  text-align: right;
+}
+
+.quiz-footer button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  background: #007bff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.quiz-result {
+  text-align: center;
+  padding: 20px;
+  background: #cee2ec;
+}
+
+.quiz-result h3 {
+  color: #28a745;
+}
+
+.retry-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #00bcd4, #0097a7);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  margin-top: 25px;
+}
+
+.retry-btn:hover {
+  background: linear-gradient(135deg, #26c6da, #00acc1);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.retry-btn:active {
+  transform: scale(0.96);
+}
+
+/* quiz result */
+.quiz-result {
+  text-align: center;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.quiz-result h3 {
+  color: #2e7d32;
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.quiz-result p {
+  font-size: 1.1rem;
+  color: #efe9e9;
+  margin: 6px 0;
+}
+
+.score-display {
+  font-weight: bold;
+  color: #e8ecef;
+  font-size: 1.2rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
